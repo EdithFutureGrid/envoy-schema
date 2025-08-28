@@ -35,7 +35,6 @@ class AggregatorPageResponse(base.BasePageModel):
     aggregators: list[AggregatorResponse]  # The aggregator models in this page
 
 
-
 class AggregatorDomainResponse(pydantic.BaseModel):
     """Represents a specific aggregator domain registered in the utility server"""
 
