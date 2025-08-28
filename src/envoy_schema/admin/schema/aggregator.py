@@ -8,6 +8,9 @@ class AggregatorRequest(pydantic.BaseModel):
     """Basic attributes for the creation of a new aggregator."""
 
     name: str
+    created_time: datetime
+    changed_time: datetime
+    domains: list[AggregatorDomain]
 
 
 class AggregatorDomain(pydantic.BaseModel):
@@ -31,14 +34,6 @@ class AggregatorPageResponse(base.BasePageModel):
 
     aggregators: list[AggregatorResponse]  # The aggregator models in this page
 
-
-class AggregatorRequest(pydantic.BaseModel):
-    """Request to send to the utility server to reques AggregatorResponse for the specified parameters"""
-
-    name: str
-    created_time: datetime
-    changed_time: datetime
-    domains: list[AggregatorDomain]
 
 
 class AggregatorDomainResponse(pydantic.BaseModel):
